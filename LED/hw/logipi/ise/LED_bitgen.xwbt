@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/jay_jetson/LOGI_Xilinx/wishbone-tutor/LED/hw/logipi/ise/LED.ncd
-OUTFILE=/home/jay_jetson/LOGI_Xilinx/wishbone-tutor/LED/hw/logipi/ise/LED.bit
-FAMILY=Spartan6
-PART=xc6slx9-2tqg144
-WORKINGDIR=/home/jay_jetson/LOGI_Xilinx/wishbone-tutor/LED/hw/logipi/ise
-LICENSE=WebPack
-USER_INFO=210993507_0_0_870

@@ -1,6 +1,0 @@
-vhdl work "ipcore_dir/clock_gen.vhd"
-vhdl work "../../../../../logi-hard/hdl/wishbone/spi_wishbone_wrapper.vhd"
-vhdl work "../../../../../logi-hard/hdl/wishbone/logi_wishbone_pack.vhd"
-vhdl work "../../../../../logi-hard/hdl/virtual_instrument/logi_virtual_led.vhd"
-vhdl work "../../../../../logi-hard/hdl/virtual_instrument/logi_virtual_components_pack.vhd"
-vhdl work "../hdl/LED.vhd"
