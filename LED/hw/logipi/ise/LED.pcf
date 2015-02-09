@@ -1,0 +1,71 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Feb 09 11:35:04 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "SW<1>" LOCATE = SITE "P100" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "P105" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "P104" LEVEL 1;
+COMP "SYS_SPI_MISO" LOCATE = SITE "P75" LEVEL 1;
+COMP "RP_SPI_CE0N" LOCATE = SITE "P79" LEVEL 1;
+COMP "SYS_SPI_MOSI" LOCATE = SITE "P65" LEVEL 1;
+COMP "SYS_SDA" LOCATE = SITE "P98" LEVEL 1;
+COMP "OSC_FPGA" LOCATE = SITE "P85" LEVEL 1;
+COMP "SYS_SCL" LOCATE = SITE "P97" LEVEL 1;
+COMP "SYS_SPI_SCK" LOCATE = SITE "P70" LEVEL 1;
+PIN SYS_SPI_SCK_pin<0> = BEL "SYS_SPI_SCK" PINNAME PAD;
+PIN "SYS_SPI_SCK_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "SW<0>" LOCATE = SITE "P99" LEVEL 1;
+PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
+PIN pll0/dcm_sp_inst_pins<1> = BEL "pll0/dcm_sp_inst" PINNAME CLKFB;
+TIMEGRP pll0_clk2x = BEL "leds0/wbs_readdata_1" BEL "leds0/wbs_readdata_0" BEL
+        "pll0/clkout1_buf" PIN "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>"
+        PIN "pll0/dcm_sp_inst_pins<1>";
+TIMEGRP clk32_grp = BEL "mem_interface0/bit_count_3" BEL
+        "mem_interface0/bit_count_2" BEL "mem_interface0/bit_count_1" BEL
+        "mem_interface0/bit_count_0" BEL "mem_interface0/addr_bus_latched_15"
+        BEL "mem_interface0/addr_bus_latched_14" BEL
+        "mem_interface0/addr_bus_latched_13" BEL
+        "mem_interface0/addr_bus_latched_12" BEL
+        "mem_interface0/addr_bus_latched_11" BEL
+        "mem_interface0/addr_bus_latched_10" BEL
+        "mem_interface0/addr_bus_latched_9" BEL
+        "mem_interface0/addr_bus_latched_8" BEL
+        "mem_interface0/addr_bus_latched_7" BEL
+        "mem_interface0/addr_bus_latched_6" BEL
+        "mem_interface0/addr_bus_latched_5" BEL
+        "mem_interface0/addr_bus_latched_4" BEL
+        "mem_interface0/addr_bus_latched_3" BEL
+        "mem_interface0/addr_bus_latched_2" BEL
+        "mem_interface0/addr_bus_latched_1" BEL
+        "mem_interface0/addr_bus_latched_0" BEL "mem_interface0/auto_inc" BEL
+        "mem_interface0/data_out_sr_15" BEL "mem_interface0/data_out_sr_14"
+        BEL "mem_interface0/data_out_sr_13" BEL
+        "mem_interface0/data_out_sr_12" BEL "mem_interface0/data_out_sr_11"
+        BEL "mem_interface0/data_out_sr_10" BEL "mem_interface0/data_out_sr_9"
+        BEL "mem_interface0/data_out_sr_8" BEL "mem_interface0/data_out_sr_7"
+        BEL "mem_interface0/data_out_sr_6" BEL "mem_interface0/data_out_sr_5"
+        BEL "mem_interface0/data_out_sr_4" BEL "mem_interface0/data_out_sr_3"
+        BEL "mem_interface0/data_out_sr_2" BEL "mem_interface0/data_out_sr_1"
+        BEL "mem_interface0/data_confn" BEL "mem_interface0/rd_wrn" BEL
+        "mem_interface0/data_in_sr_14" BEL "mem_interface0/data_in_sr_13" BEL
+        "mem_interface0/data_in_sr_12" BEL "mem_interface0/data_in_sr_11" BEL
+        "mem_interface0/data_in_sr_10" BEL "mem_interface0/data_in_sr_9" BEL
+        "mem_interface0/data_in_sr_8" BEL "mem_interface0/data_in_sr_7" BEL
+        "mem_interface0/data_in_sr_6" BEL "mem_interface0/data_in_sr_5" BEL
+        "mem_interface0/data_in_sr_4" BEL "mem_interface0/data_in_sr_3" BEL
+        "mem_interface0/data_in_sr_2" BEL "mem_interface0/data_in_sr_1" BEL
+        "mem_interface0/data_in_sr_0" BEL "mem_interface0/data_byte" BEL
+        "mem_interface0/bit_count_0_1" BEL "mem_interface0/bit_count_1_1" BEL
+        "SYS_SPI_SCK_BUFGP/BUFG";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN pll0/dcm_sp_inst_pins<2> = BEL "pll0/dcm_sp_inst" PINNAME CLKIN;
+TIMEGRP clk50_grp = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "pll0/dcm_sp_inst_pins<2>";
+TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 10 ns HIGH 50%;
+TS_PER_CLK32 = PERIOD TIMEGRP "clk32_grp" 10 ns HIGH 50%;
+TS_pll0_clk2x = PERIOD TIMEGRP "pll0_clk2x" TS_PER_CLK50 / 2 HIGH 50%;
+SCHEMATIC END;
+
