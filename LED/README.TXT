@@ -3,11 +3,9 @@ wishbone-tutor LED Project *****************************************************
 * DESCRIPTION  **************
 This is an introduction to wishbone, using RaspberryPi, LogiPi FPGA board and Logi Virtual Components.
 Part 1: LED
-2 virtual LEDs are on the virtual breadboard, and they are operated by the physical switches on the LogiPi
-those who prefer can follow the hamster FPGA tutorials: 
-http://hamsterworks.co.nz/mediawiki/index.php/FPGA_course
-without having to wire up 7 physical LEDs and switches.
-
+The physical switches on the LogiPi2 operate two virtual LEDs on the virtual breadboard. 
+please see the hamster FPGA tutorial module 2: 
+http://hamsterworks.co.nz/mediawiki/index.php/Module_2
 
 * INSTRUCTIONS *************
 Generate Programming File using Xilinx ISE open: File | New Project | wishbone-tutor/LED/hw/logipi/ise/LED.xise
